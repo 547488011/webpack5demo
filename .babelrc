@@ -1,0 +1,6 @@
+{
+    "presets": [
+        ["env"] // 通过preset-react 支持jsx
+      ],
+      "plugins": ["@vue/babel-plugin-jsx"]
+   }

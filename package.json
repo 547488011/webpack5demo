@@ -1,0 +1,48 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack serve --mode development"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/preset-typescript": "^7.17.12",
+    "@vue/babel-preset-jsx": "^1.2.4",
+    "axios": "^0.27.2",
+    "babel-loader": "^8.2.5",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^6.7.1",
+    "less": "^4.1.3",
+    "less-loader": "^11.0.0",
+    "raw-loader": "^4.0.2",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.7.4",
+    "vue": "^3.2.36",
+    "vue-loader": "^17.0.0",
+    "vuex": "^4.0.2",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "devDependencies": {
+    "@vue/babel-plugin-jsx": "^1.1.1",
+    "babel-plugin-component": "^1.1.1",
+    "element-plus": "^2.2.6",
+    "html-webpack-plugin": "^4.5.2",
+    "postcss-loader": "^7.0.0",
+    "resolve-url-loader": "^5.0.0",
+    "svg-url-loader": "^7.1.1",
+    "unplugin-auto-import": "^0.9.0",
+    "unplugin-vue-components": "^0.19.6",
+    "vue-router": "^4.0.16",
+    "vue-tsx-loader": "^0.1.4",
+    "webpack-dev-server": "^4.9.2"
+  }
+}
