@@ -46,7 +46,9 @@ module.exports = {
         },
         {
             test: /\.(png|jpe?g|gif|svg)$/,
-            loader: 'svg-url-loader'
+            use:[
+                {loader: 'svg-url-loader'},
+            ]
         },
         {
             test: /\.module\.less/,
