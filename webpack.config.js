@@ -45,10 +45,12 @@ module.exports = {
             ]
         },
         {
-            test: /\.(png|jpe?g|gif|svg)$/,
-            use:[
-                {loader: 'svg-url-loader'},
-            ]
+            test: /\.(png|jpe?g|gif)$/,
+            type: 'asset/resource'
+        },
+        {
+            test: /\.svg$/,
+            type: 'asset/inline',
         },
         {
             test: /\.module\.less/,

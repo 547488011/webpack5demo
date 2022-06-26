@@ -1,0 +1,99 @@
+.content-scroll{
+    >div{
+        padding: 12px 20px 0 20px;
+    }
+    &-item{
+        height: 129px;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+        border-bottom: 1px solid rgba(228, 230, 235, 0.5);
+        cursor: pointer;
+        .icon-close{
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            opacity: 0;
+        }
+        &-info {
+            height: 22px;
+            margin-bottom: 10px;
+            span{
+                display: inline-block;
+                font-size: 14px;
+            }
+            &-username{
+                color: #4e5969;
+                margin-right: 8px;
+            }
+            &-timer{
+
+                padding: 0 10px;
+                color: #86909c;
+                border-right: 1px solid #e5e6eb;
+                border-left: 1px solid #e5e6eb;
+                
+            }
+            &-category{
+                padding: 0 8px;
+                color: #86909c;
+            }
+        }
+        &-content{
+            &-left{
+                &-title{
+                   h2 {
+                       font-size: 16px;
+                       margin: 8px 0;
+                       margin-top: 0;
+                    }
+                }
+                &-content{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    color: #86909c;
+                    font-size: 13px;
+                    margin-bottom: 10px;
+                }
+                &-status{
+                    font-size: 13px;
+                    color: #86909c;
+                    height: 18px;
+                    display: flex;
+                    align-items: center;
+                    span{
+                        display: flex;
+                        align-items: center;
+                        margin-right: 15px;
+                    }
+                    span:hover{
+                        color: #007fff;
+                    }
+                    i{
+                        display: inline-block;
+                        height: 100%;
+                        position: relative;
+                        top: 2px;
+                        margin-right: 3px;
+                        svg{
+                            height: 1.5em;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    &>div:hover{
+        background-color: #fafafa;
+        .icon-close{
+            opacity: 1;
+            cursor: pointer;
+            color: #86909c;
+        }
+        .icon-close:hover{
+            color: #007fff;
+        }
+    }
+}

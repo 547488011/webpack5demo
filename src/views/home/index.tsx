@@ -1,5 +1,6 @@
 import { defineComponent} from 'vue'
 import Header from './header'
+import Main from './main'
 import './css/index.less'
 
 export default defineComponent({
@@ -8,6 +9,7 @@ export default defineComponent({
         return ()=>(
             <div class="home">
                 <Header/>
+                <Main/>
             </div>
         )
     }
