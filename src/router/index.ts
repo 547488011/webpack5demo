@@ -15,6 +15,11 @@ const routes :RouteRecordRaw[] = [
         path: '/home',
         name: 'home',
         component: () => import('@/views/home')
+    },
+    {
+        path: '/editor',
+        name: 'editor',
+        component:() => import('@/views/editor')
     }
 ]
 

@@ -1,0 +1,54 @@
+.markdow-editor {
+    &-header{
+        height: 63px;
+        display: flex;
+        padding: 0 27px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        z-index: 100;
+        align-items: center;
+        .left-box {
+            padding-right: 14px;
+        }
+        .input-box {
+            flex: 1;
+            height: 100%;
+            .el-input{
+                height: 100%;
+                font-size: 24px;
+                .el-input__wrapper{
+                    box-shadow: none;
+                    cursor: default;
+                    padding: 0;
+                    .el-input__inner {
+                        color: #1d2129;
+                    }
+                }
+                .el-input__wrapper:hover{
+                    box-shadow: none;
+                }
+            }
+        }
+        .right-box {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin-right: 10px;
+            >div {
+                font-size: 14px;
+                margin: 0 12px;
+                color: #c9cdd4;
+                white-space: nowrap;
+                cursor: default;
+            }
+            >button {
+                margin: 0 8px;
+            }
+            >span {
+                width: 32px;
+                height: 32px;
+                margin: 0 12px ;
+            }
+        }
+    }
+}
