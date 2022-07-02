@@ -13,7 +13,7 @@ const {
 module.exports = {
     entry: './src/main.ts',
     output: {
-        filename: 'bundle.js',
+        filename: 'bundle_[contenthash].js',
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
@@ -61,12 +61,10 @@ module.exports = {
                 loader: 'css-loader',
                 options: {
                     modules: {
+                        auto: true,
                         localIdentName: '[local]_[hash:base64:5]'
                     }
                 }
-            },
-            {
-                loader: 'postcss-loader'
             },
             {
                 loader: 'less-loader',

@@ -51,4 +51,52 @@
             }
         }
     }
+    .bytemd {
+        height: calc(100vh - 65px);
+      }
+    .bytemd-body {
+
+        .bytemd-preview {
+
+            .markdown-body {
+                word-break: break-word;
+                line-height: 1.75;
+                font-weight: 400;
+                font-size: 16px;
+                overflow-x: hidden;
+                color: #333;
+                h2,h3,h5,h6 {
+                    font-size: 20px;
+                }
+                h1,h2,h3,h4,h5,h6 {
+                    line-height: 1.5;
+                    margin-top: 35px;
+                    margin-bottom: 10px;
+                    padding-bottom: 5px;
+                }
+                h2 {
+                    padding-bottom: 12px;
+                    border-bottom: 1px solid #ececec;
+                }
+                p {
+                    line-height: inherit;
+                    margin-top: 22px;
+                    margin-bottom: 22px;
+                }
+                >table {
+                    display: inline-block!important;
+                    width: auto;
+                    max-width: 100%;
+                    overflow: auto;
+                    border: 1px solid #f6f6f6;
+                    >thead {
+                        background: #f6f6f6;
+                        color: #000;
+                        text-align: left;
+                    }
+                }
+                
+            }
+        }
+    }
 }

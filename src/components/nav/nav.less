@@ -1,7 +1,16 @@
 
-
+.header-nav-box {
+    position: relative;
+    height: 61px;
+}
 .header-nav {
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .2s;
+    transform: translate3d(0,-100%,0);
     display: flex;
     height: 60px;
     justify-content: space-between;
@@ -111,6 +120,9 @@
     }
     
     
+}
+.visible {
+    transform: translateZ(0)
 }
 .drop-enter-active {
     animation: bounce-in .5s;

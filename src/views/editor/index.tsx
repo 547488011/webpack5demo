@@ -1,27 +1,16 @@
-import { defineComponent ,ref,reactive} from "vue";
+import { defineComponent ,ref} from "vue";
 import { Editor } from "@bytemd/vue-next";
-import gfm from "@bytemd/plugin-gfm";
-import zh_Hans from "./zh-en.json";
+import { userEditor } from "@/hooks/use_editor";
+
 import  "./editor.less";
-import 'bytemd/dist/index.css';
+
 export default defineComponent({
     name: 'byEditor',
     components: {
         Editor
     },
     setup() {
-        const editorConfig = reactive ({
-            value: '',
-            plugins: [
-                gfm()
-            ]
-        })
-
-        const handleChange = (v) => {
-            editorConfig.value = v
-            
-        }
-
+        const { editorConfig,handleChange,uploadImage ,zh_Hans} = userEditor()
         const input = ref()
         return () => (
             <div class="markdow-editor">
@@ -39,11 +28,12 @@ export default defineComponent({
                         />
                     </div>
                 </div>
-                <div >
+                <div>
                    <editor
                    value={editorConfig.value}
                    plugins={editorConfig.plugins}
                    locale={zh_Hans}
+                   uploadImages={uploadImage}
                    onChange={handleChange}/>
                 </div>
             </div>

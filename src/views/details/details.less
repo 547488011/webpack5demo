@@ -1,0 +1,79 @@
+.details {
+    &-main {
+        position: relative;
+        padding: 21px 90px 0 90px;
+        width: 100%;
+        background-color: #f4f5f5;
+        min-height: calc( 100vh - 82px);
+        display: flex;
+        &-content{
+            width: 820px;
+            background-color: #fff;
+            padding: 32px 32px 39px 32px;
+            margin-bottom: 18px;
+            position: relative;
+            max-width: 100%;
+            box-sizing: border-box;
+            &-header {
+                h1 {
+                    margin: 0 0 20px;
+                    font-size: 32px;
+                    font-weight: 600;
+                    line-height: 1.31;
+                    color: #252933;
+                }
+                &-user {
+                    height: 48px;
+                    margin-bottom: 20px;
+                    display: flex;
+                    .user-image {
+                        height: 40px;
+                        width: 52px;
+                        img {
+                            background-position: 50%;
+                            background-repeat: no-repeat;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            margin-right: 12px;
+                            border-style: none;
+                        }
+                    }
+                    .user-info {
+                        >a {
+                            display: inline-block;
+                            width: 100%;
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: #515767;
+                            line-height: 24px;
+                            span {
+                                display: inline-block;
+                                vertical-align: top;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                max-width: 128px;
+                            }
+                        }
+                        &-meta {
+                            font-size: 14px;
+                            color: #8a919f;
+                            margin-top: 2px;
+                            line-height: 22px;
+                            span {
+                                letter-spacing: 1px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-sider {
+            width: 300px;
+            background-color: #fff;
+            margin-left: 20px;
+            height: 200px;
+        }
+    }
+}

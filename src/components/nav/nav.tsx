@@ -30,8 +30,8 @@ export default defineComponent({
             }
         })
         return () => (
-            
-            <div class="header-nav">
+            <div class="header-nav-box">
+                 <div class="header-nav visible">
                 <div class="header-nav-left">
                     <a href="/" class="logo">
                         <img src={logo} alt="" />
@@ -73,6 +73,7 @@ export default defineComponent({
                     </div>
                </div>
             </div>
+        </div>
         )
     }
 })
