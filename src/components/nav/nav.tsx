@@ -1,4 +1,4 @@
-import { defineComponent,ref,computed ,Ref} from 'vue'
+import { defineComponent,ref,computed ,Ref,inject} from 'vue'
 import './nav.less'
 import logo from '@/assets/img/logo.svg';
 import search from '@/assets/img/search.svg';
@@ -9,6 +9,7 @@ export default defineComponent({
     setup() {
         const active = ref(false)
         const name:Ref<string|undefined> = ref()
+        const fixedStatus = inject<Ref<boolean>>('fixedStatus')
         const renderDrop = (isIcon=true)=>{
             return isIcon? (
                 <el-dropdown-menu>
@@ -31,7 +32,7 @@ export default defineComponent({
         })
         return () => (
             <div class="header-nav-box">
-                 <div class="header-nav visible">
+                 <div class={['header-nav', {'visible':!fixedStatus?.value}]}>
                 <div class="header-nav-left">
                     <a href="/" class="logo">
                         <img src={logo} alt="" />

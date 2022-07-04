@@ -1,11 +1,11 @@
 import { App } from 'vue'
 import 'element-plus/dist/index.css'
 import {
-    ElForm, ElCard, ElFormItem, ElInput, ElButton, ElCheckbox, ElLink,ElDropdown, ElAvatar, ElDropdownMenu, ElDropdownItem, ElIcon
-} from 'element-plus'
+    ElForm, ElCard, ElFormItem, ElInput, ElButton, ElCheckbox, ElLink,ElDropdown, ElAvatar, ElDropdownMenu, ElDropdownItem, ElIcon, ElBacktop
+} from 'element-plus';
 
 const components = [
-     ElIcon,ElForm, ElCard, ElFormItem, ElInput, ElButton, ElCheckbox, ElLink,ElDropdown,ElAvatar,ElDropdownMenu,ElDropdownItem
+     ElBacktop,ElIcon,ElForm, ElCard, ElFormItem, ElInput, ElButton, ElCheckbox, ElLink,ElDropdown,ElAvatar,ElDropdownMenu,ElDropdownItem
 ]
 
 
