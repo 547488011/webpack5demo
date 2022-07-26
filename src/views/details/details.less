@@ -8,12 +8,15 @@
         display: flex;
         &-content{
             width: 820px;
-            background-color: #fff;
-            padding: 32px 32px 39px 32px;
-            margin-bottom: 18px;
-            position: relative;
-            max-width: 100%;
-            box-sizing: border-box;
+            .details-bg {
+                background-color: #fff;
+                width: 100%;
+                padding: 32px 32px 39px 32px;
+                margin-bottom: 18px;
+                position: relative;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
             &-header {
                 h1 {
                     margin: 0 0 20px;
@@ -69,11 +72,66 @@
                 }
             }
         }
+        
         &-sider {
             width: 300px;
             background-color: #fff;
             margin-left: 20px;
-            height: 200px;
+            height: 230px;
+            &-catalogue {
+                padding: 16px 0;
+                margin: 0 20px;
+                font-size: 16px;
+                line-height: 24px;
+                color: #1d2129;
+                font-weight: 500;
+                border-bottom: 1px solid #e4e6eb;
+            }
+            &-list {
+                .catalog-list {
+                    padding: 0;
+                    margin-top: 8px;
+                    >li {
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 22px;
+                        color: #333;
+                        list-style: none;
+                        display: flex;
+                        box-sizing: border-box;
+                        align-items: center;
+                        width: 100%;
+                        height: 44px;
+                      >a {
+                         color: #000;
+                         padding: 0 20px;
+                      }
+                      .active::before {
+                        content: "";
+                        position: absolute;
+                        top: 7px;
+                        left: 0;
+                        margin-top: 7px;
+                        width: 4px;
+                        height: 16px;
+                        background: #1e80ff;
+                        border-radius: 0 4px 4px 0;
+                      }
+                      .active {
+                          color: #1e80ff;
+                      }
+                    }
+                }
+            }
+            
+        }
+        .list-fixed {
+            position: fixed;
+            top: 81px;
+            right: -25px;
         }
     }
 }

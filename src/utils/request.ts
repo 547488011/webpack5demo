@@ -20,6 +20,7 @@ request.interceptors.request.use((config: AxiosRequestConfig) => {
 
 request.interceptors.response.use((response: AxiosResponse) => {
     const { status,data } = response
+    
     if(status === 200 && data?.code === 0){
         data.msg && ElMessage.success(data.msg)
         return data.data

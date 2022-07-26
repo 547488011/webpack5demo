@@ -26,6 +26,11 @@ const routes :RouteRecordRaw[] = [
         path: '/details/:id',
         name: 'details',
         component: () => import("@/views/details")
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'notFound',
+        component: () => import('@/views/not-found')
     }
 ]
 

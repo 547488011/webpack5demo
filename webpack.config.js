@@ -112,11 +112,11 @@ module.exports = {
         })
     ],
     // 配置webpack-dev-server将dist下的目录代理到web server
-    devServer: {
-        static: './dist',
-        hot: true,
-        open: true, // 编译结束后自动打开浏览器
-        // 设置本地端口号
-        host: "localhost" //设置本地url
-    }
+    // devServer: {
+    //     static: './dist',
+    //     hot: true,
+    //     open: true, // 编译结束后自动打开浏览器
+    //     // 设置本地端口号
+    //     host: "localhost" //设置本地url
+    // }
 }

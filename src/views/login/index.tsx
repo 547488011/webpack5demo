@@ -1,7 +1,6 @@
 import { defineComponent} from 'vue'
-import Account from '@/views/login/components/account'
+import Account from '@/views/login/components/account/account'
 import './css/index.less'
-
 export default defineComponent({
     name: 'login',
     setup(){

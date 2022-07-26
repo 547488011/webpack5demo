@@ -1,0 +1,90 @@
+.comment {
+    background-color: #fff;
+    width: 100%;
+    padding: 24px 32px;
+    box-sizing: border-box;
+    >h2 {
+        margin-bottom: 20px;
+    }
+    &-form {
+        display: flex;
+        .el-avatar {
+            margin-right: 16px
+        }
+        &-textarea {
+            flex: 1;
+            .el-button {
+                margin-left:auto;
+                display: flex;
+                margin-top: 8px;
+            }
+        }
+    }
+    &-list {
+        padding-top: 40px;
+        padding-bottom: 16px;
+        >h2 {
+            padding-bottom: 8px;
+        }
+        &-item {
+            padding: 16px 0;
+            display: flex;
+            &-portrait {
+                margin-right: 16px;
+            }
+            &-info {
+                flex: 1;
+                &-title {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    color: #8a919f;
+                    line-height: 22px;
+                    &-name {
+                        font-weight: 500;
+                        font-size: 15px;
+                        color: #252933;
+                        line-height: 26px;
+                    }
+                }
+                &-content {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #515767;
+                    margin-top: 8px;                
+                }
+                &-reply {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 8px;
+                    line-height: 22px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    .reply-content {
+                        color: #8a919f;
+                        display: flex;
+                        align-items: center;
+                        >span {
+                            margin-left: 4px;
+                            display: inline-block;
+                        }
+                    }
+                    .active {
+                        color: #1e80ff;
+                    }
+                }
+                &-textarea {
+                    .el-textarea {
+                        margin-top: 12px;
+                        margin-bottom: 8px;
+                    }
+                    .el-button {
+                        display: flex;
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+}
