@@ -29,8 +29,9 @@ export default defineComponent({
                 if(vaild){
                     // 验证通过
                 const data = await login(account)
-                data[0]['user_name'] && LocalCache.setCache('username',data[0]['user_name']);
-                data[0]?.id && LocalCache.setCache('userId',data[0].id)
+                if(!data[0]) return
+                 LocalCache.setCache('username',data[0]['user_name']);
+                 LocalCache.setCache('userId',data[0].id)
                 setTimeout(()=>{
                     router.push('/home')
                 },400)

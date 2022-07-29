@@ -13,7 +13,6 @@ export default defineComponent({
     },
     setup(props) {
         const activeReply = ref(false)
-        console.log(props.replyList);
         
         const textareaRef = ref<InputInstance>()
         const handleActiveReply = (textareaEl?:InputInstance) => {

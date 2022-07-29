@@ -14,13 +14,9 @@ export function userEditor() {
         ],
     })
     const handleChange = (v:string) => {
-        console.log(v);
-        
         editorConfig.value = v
-        
     }
     const uploadImage = async (files:Array<File>) => {
-        console.log(files);
         const formData = new FormData()
         formData.append('image',files[0])
         const data = await uploadImg(formData)    
