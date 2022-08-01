@@ -31,6 +31,7 @@
     "juejin-markdown-themes": "^1.29.2",
     "less": "^4.1.3",
     "less-loader": "^11.0.0",
+    "moment": "^2.29.4",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "pinia": "^2.0.17",
     "raw-loader": "^4.0.2",

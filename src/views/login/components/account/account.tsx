@@ -32,6 +32,7 @@ export default defineComponent({
                 if(!data[0]) return
                  LocalCache.setCache('username',data[0]['user_name']);
                  LocalCache.setCache('userId',data[0].id)
+                 LocalCache.setCache('imgUrl',data[0].image_url)
                 setTimeout(()=>{
                     router.push('/home')
                 },400)

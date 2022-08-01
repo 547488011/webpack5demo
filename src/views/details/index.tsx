@@ -2,9 +2,11 @@ import { defineComponent,onMounted,ref,nextTick,onBeforeUnmount } from "vue";
 import HeaderNav from "@/components/nav/nav";
 import { getDetails } from '@/api/details'
 import { useRouter } from 'vue-router'
+import moment from 'moment'
 import { useDirectory  } from '@/hooks/use_directory'
 import { userEditor } from "@/hooks/use_editor";
 import { Viewer } from "@bytemd/vue-next";
+import { defaultImg } from '@/const/default'
 import Comment from './components/comment'
 import './details.less'
 export default defineComponent({
@@ -35,8 +37,11 @@ export default defineComponent({
         onBeforeUnmount(() => {
             window.removeEventListener('scroll', () => {});
         })
+        const formatTime = (time:string) => {
+            return moment(time).format('YYYY年MM月DD日 hh:mm:ss')
+        }
         const getDetailsFn = async(articleId:string) => {
-            const res = await getDetails(articleId)
+            const res = await getDetails(articleId) as any
             detilsInformation.value = res[0]
             editorConfig.value = res[0].article_content
             nextTick( async()=> {
@@ -56,20 +61,23 @@ export default defineComponent({
                             <h1>{ detilsInformation.value?.article_topic }</h1>
                             <div class="details-main-content-header-user">
                                 <div class="user-image">
-                                    <img src="https://p6-passport.byteacctimg.com/img/user-avatar/e4e77b17f384d5c51b9138ee9bb0581c~300x300.image" alt="" />
+                                    <img src={detilsInformation.value?.image_url ?? defaultImg} alt="" />
                                 </div>
                                 <div class="user-info">
                                     <a href="">
                                         <span>
-                                            追_光_者
+                                            {detilsInformation.value?.user_name}
                                         </span>
                                     </a>
                                     <div class="user-info-meta">
-                                        <span>2022年06月27日 20:34</span>
-                                        <span> ·&nbsp;&nbsp;阅读943</span>
+                                        <span>{formatTime(detilsInformation.value?.create_time)}</span>
+                                        {/* <span> ·&nbsp;&nbsp;阅读943</span> */}
                                     </div>
                                 </div>
                             </div>
+                            {detilsInformation.value?.article_image_url && <div class="details-main-content-header-imgage">
+                                <img src={detilsInformation.value?.article_image_url} alt="" />
+                            </div> }
                         </div>
                         <viewer
                           value={ editorConfig.value }

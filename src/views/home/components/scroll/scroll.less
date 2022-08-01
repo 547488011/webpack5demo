@@ -1,4 +1,5 @@
 .content-scroll{
+    overflow: auto;
     >div{
         padding: 12px 20px 0 20px;
     }
@@ -40,7 +41,10 @@
             }
         }
         &-content{
-            &-left{
+            display: flex;
+            justify-content: space-between;
+            &-left {
+                width: 75%;
                 &-title{
                    h2 {
                        font-size: 16px;
@@ -81,6 +85,13 @@
                         }
                     }
                     
+                }
+            }
+            &-right {
+                margin-left: 24px;
+                >img {
+                    width: 120px;
+                    height: 80px;
                 }
             }
         }

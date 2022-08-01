@@ -1,42 +1,19 @@
-
-export  function toToc(data: string[]) {
-    let levelStack: string[] = []
-    let result:string = ''
-    const resObj = {isUlHtml: false ,liList:[]} 
-    const addStartUL = () => { result += '<ul class="catalog-list">'; }
-    const addEndUL = () => { result += '</ul>\n'; }
-    const addLI = (index: number, itemText: string) => { result += `<li><a onclick="handleHerf(${index})" name="link"  class="toc-link-#${index}"> ${itemText} </a></li>\n`; }
-    data.forEach(function (item: any, index: number) {
-      let itemText: string = item.replace(/<[^>]+>/g, '')  // 匹配h标签的文字
-      let itemLabel: string = item.match(/<\w+?>/)[0]  // 匹配h?标签<h?>
-      let levelIndex: number = levelStack.indexOf(itemLabel) // 判断数组里有无<h?>
-      // 没有找到相应<h?>标签，则将新增ul、li
-      if (levelIndex === -1) {
-        levelStack.unshift(itemLabel)
-        addStartUL()
-        addLI(index, itemText)
-      }
-      // 找到了相应<h?>标签，并且在栈顶的位置则直接将li放在此ul下
-      else if (levelIndex === 0) {
-        addLI(index, itemText)
-      }
-      // 找到了相应<h?>标签，但是不在栈顶位置，需要将之前的所有<h?>出栈并且打上闭合标签，最后新增li
-      else {
-        while (levelIndex--) {
-          levelStack.shift()
-          addEndUL()
-        }
-        addLI(index, itemText)
-      }
-    })
-    // 如果栈中还有<h?>，全部出栈打上闭合标签
-    while (levelStack.length) {
-      levelStack.shift()
-      addEndUL()
-    }
-    console.log(result);
-    
-
-    
-    return result
-  }
+export const handlerDateDurationCurrent = (time:string) => {
+  if(!time) return
+  const oldDate = new Date(time)
+  const newDate = new Date()
+  const timeDifference = Math.abs(newDate.getTime() - oldDate.getTime())
+  const days = timeDifference / (24 * 60 * 60 * 1000) 
+  const hours = days * 24
+  const isYear = (days / 365) > 1
+  const isMonth = (days / 30) > 1
+  if(isYear) return  Math.floor(days / 365) +'年前'
+  if(isMonth) return Math.floor(days / 30) + '月前'
+  if(days >= 1) return Math.floor(days) + '天前'
+  if(hours >= 1) return Math.floor(hours) + '小时前'
+  console.log(days,'day');
+  
+  console.log(hours,'hu')
+  
+  return Math.floor(hours * 60) + '分钟前'
+}

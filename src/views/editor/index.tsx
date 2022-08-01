@@ -6,6 +6,7 @@ import {rules} from './config/form_Rule'
 import  "./editor.less";
 import { Delete, Plus} from '@element-plus/icons-vue'
 import LocalCache from '@/utils/cache'
+import { defaultImg } from '@/const/default'
 import { addArticle } from '@/api/editor'
 import type { UploadFile } from 'element-plus'
 import { ElMessage } from 'element-plus'
@@ -40,12 +41,10 @@ export default defineComponent({
         }
 
         const handleRemove = (file:UploadFile) => {
-            console.log(file)
             return true
         }
         
         const handleSuccess = (res) => {
-            console.log(res);
             ruleForm.imgUrl = res.data
             
         }
@@ -104,7 +103,7 @@ export default defineComponent({
                       
                         <el-button color="#1d7dfa" onClick={publishButton} >发布</el-button>
                         <el-avatar
-                            src="https://p6-passport.byteacctimg.com/img/user-avatar/e4e77b17f384d5c51b9138ee9bb0581c~300x300.image"
+                            src={LocalCache.getCache('imgUrl') || defaultImg}
                         />
                     </div>
                 </div>

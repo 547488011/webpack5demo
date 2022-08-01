@@ -1,5 +1,5 @@
  interface registeForm {
-    usename:string,
+    username:string,
     password: string,
     imgUrl?:string
 }

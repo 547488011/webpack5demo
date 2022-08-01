@@ -1,5 +1,6 @@
 import { defineComponent,ref,computed ,Ref,inject,onMounted} from 'vue'
 import './nav.less'
+import localCache from '@/utils/cache'
 import logo from '@/assets/img/logo.svg';
 import search from '@/assets/img/search.svg';
 import activeSearch from '@/assets/img/search-active.svg'
@@ -13,6 +14,8 @@ export default defineComponent({
         const goTo = (path:string) => {
             router.push(path)
         }
+        const userPortrait = localCache.getCache('imgUrl')
+        
         const name:Ref<string|undefined> = ref()
         const fixedStatus = inject<Ref<boolean>>('fixedStatus')
         const setParams = inject('setParams') as Function
@@ -96,7 +99,7 @@ export default defineComponent({
                    
                     <div class="header-nav-right-user">
                     <el-avatar
-                            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+                            src={userPortrait}
                         />
                     </div>
                </div>

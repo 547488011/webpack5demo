@@ -4,6 +4,7 @@ import { Delete, Plus} from '@element-plus/icons-vue'
 
 import { rules } from '../../config/account-config'
 import { registeForm } from '../type'
+import { register } from '@/api/register'
 import { useUploadImg } from '@/hooks/use_upload_Img'
 export default defineComponent({
     name:'registeDialog',
@@ -20,12 +21,13 @@ export default defineComponent({
         }
         const {fileList,handleRemove,handleSuccess,actionUrl} = useUploadImg()
         const registeForm:registeForm = reactive({
-            usename:'',
+            username:'',
             imgUrl:'',
             password:''
         })
-        const registeFunc = () => {
-
+        const registeFunc = async() => {
+            await register(registeForm)
+            emit('dialogClose')
         }
         const renderFooter = () => (
             <span class="dialog-footer">
@@ -62,7 +64,7 @@ export default defineComponent({
                     status-icon
                 >
                     <el-form-item label="账号:" prop="username">
-                    <el-input v-model={registeForm.usename}  />
+                    <el-input v-model={registeForm.username}  />
                     </el-form-item>
                     <el-form-item label="密码:" prop="password">
                     <el-input v-model={registeForm.password} showPassword/>
